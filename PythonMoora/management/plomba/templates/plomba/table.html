@@ -1,0 +1,30 @@
+<div class="box">
+    <div class="box-body">
+        <div class="box-header">
+            <h3 class="box-title">Pengalman Lomba</h3>
+        </div>
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Intensitas</th>
+                    <th>Nilai</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for kl in plomba %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{kl.siswa.nama}}</td>
+                    <td>{{kl.intensitas}}</td>
+                    <td>{{kl.nilai}}</td>
+                </tr>
+                
+
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>

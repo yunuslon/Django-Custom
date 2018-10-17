@@ -1,0 +1,54 @@
+{% extends 'layout/dashboard/index.html' %} {% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+           Nilai Matrix Pengalaman Lomba
+            <small>Template</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Nilai Matrix Pengalaman Lomba</a></li>
+            <li class="active">Template</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+<div class="box">
+        <div class="box-body">
+            <div class="box-header">
+                <h3 class="box-title">Nilai Matrix Pengalaman Lomba</h3>
+            </div>
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Intensitas</th>
+                        <th>Nilai matrix P.Lomba</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for nl in mtplomba %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{nl.0}}</td>
+                        <td>{{nl.1}}</td>
+                        <td>{{nl.2}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example1').DataTable( {
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50,]]
+        } );
+    } );
+</script>
+{% endblock %}

@@ -1,0 +1,30 @@
+<div class="box">
+    <div class="box-body">
+        <div class="box-header">
+            <h3 class="box-title">karakter</h3>
+        </div>
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>sikap</th>
+                    <th>Nilai</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for kl in karakter %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{kl.siswa.nama}}</td>
+                    <td>{{kl.sikap}}</td>
+                    <td>{{kl.nilai}}</td>
+                </tr>
+                
+
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>

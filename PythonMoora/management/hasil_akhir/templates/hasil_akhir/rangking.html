@@ -1,0 +1,61 @@
+{% extends 'layout/dashboard/index.html' %} {% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+           Hasil Akhir
+            <small>Template</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Hasil Akhir</a></li>
+            <li class="active">Template</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+<div class="box">
+        <div class="box-body">
+            <div class="box-header">
+                <h3 class="box-title">Hasil Akhir</h3>
+                <div align="right">
+                    <a href="{% url 'hasil_akhir:report_rangking' %}">
+                       <button class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+                    </a>
+                </div>
+            </div>
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Benefit</th>
+                        <th>Cost</th>
+                        <th>Rangking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in nl %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.0}}</td>
+                        <td>{{c.1}}</td>
+                        <td>{{c.2}}</td>
+                        <td>{{c.3}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example1').DataTable( {
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50,]]
+        } );
+    } );
+</script>
+{% endblock %}
